@@ -171,7 +171,7 @@ export class ThermostatService extends BaseService {
           let thermostatMode;
           try {
             thermostatMode = this.deviceStatus.status.thermostatMode.thermostatMode.value;
-          } catch (error) {
+          } catch {
             this.log.warn(`Missing thermostatMode from ${this.name}`);
             resolve(this.targetHeatingCoolingState);
             return;

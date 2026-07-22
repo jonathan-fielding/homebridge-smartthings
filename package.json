@@ -1,16 +1,20 @@
 {
   "private": false,
   "displayName": "SmartThings Plugin",
-  "name": "homebridge-smartthings-ik",
-  "version": "1.5.22",
+  "name": "@jonthanfielding/homebridge-smartthings",
+  "version": "2.0.0",
   "description": "Connects SmartThings devices to Homebridge.  Automatically discovers devices.",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iklein99/homebridge-smartthings.git"
+    "url": "https://github.com/jonathan-fielding/homebridge-smartthings.git"
   },
   "bugs": {
-    "url": "https://github.com/iklein99/homebridge-smartthings/issues"
+    "url": "https://github.com/jonathan-fielding/homebridge-smartthings/issues"
   },
   "engines": {
     "node": ">=18.0.0",
@@ -18,7 +22,7 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint src/**.ts --max-warnings=0",
+    "lint": "oxlint src",
     "watch": "npm run build && npm link && nodemon",
     "build": "rimraf ./dist && tsc",
     "prepublishOnly": "npm run lint && npm run build"
@@ -32,11 +36,9 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.46.0",
     "homebridge": "^2.0.0",
     "nodemon": "^3.0.0",
+    "oxlint": "^1.75.0",
     "rimraf": "^5.0.0",
     "ts-node": "^10.3.0",
     "typescript": "^7.0.0"
