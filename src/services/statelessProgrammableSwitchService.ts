@@ -63,9 +63,9 @@ export class StatelessProgrammableSwitchService extends BaseService {
             if (characteristicValue) {
               resolve(characteristicValue);
             } else {
-              resolve;
+              reject(new this.platform.api.hap.HapStatusError(this.platform.api.hap.HAPStatus.SERVICE_COMMUNICATION_FAILURE));
             }
-          } catch(error) {
+          } catch {
             this.log.error(`Missing button status from ${this.name}`);
           }
         } else {

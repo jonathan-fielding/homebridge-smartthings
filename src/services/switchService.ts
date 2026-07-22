@@ -60,7 +60,7 @@ export class SwitchService extends BaseService {
           let switchState;
           try {
             switchState = this.deviceStatus.status.switch.switch.value;
-          } catch(error) {
+          } catch {
             this.log.error(`Missing switch status from ${this.name}`);
           }
           this.log.debug(`Switch value from ${this.name}: ${switchState}`);

@@ -57,7 +57,7 @@ export abstract class SensorService extends BaseService {
             this.log.debug(`State for ${this.name}: ${value}`);
             resolve(value);
             return;
-          } catch (error) {
+          } catch {
             this.statusFailureCount++;
             if (this.statusFailureCount > 5) {
               this.log.error(`Bad status from ${this.name}.  Removing this service.`);
